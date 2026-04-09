@@ -13,7 +13,7 @@ export async function POST(request: NextRequest) {
       maxAge: 60 * 60 * 24,
       path: "/",
     });
-    return;
+    return response;
   }
   return NextResponse.json(
     {error:'istifadəçi adı və ya şifrəsi yalnışdır'},

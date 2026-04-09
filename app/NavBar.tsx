@@ -11,6 +11,7 @@ const links = [
     { name: 'About Us', href: '/AboutUs' },
     { name: 'Contact', href: '/Contact' },
       { name: 'Todo', href: '/Todos' },
+        { name: 'Gallery', href: '/gallery' },
 ]
 
 export default function NavBar() {

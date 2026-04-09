@@ -95,7 +95,7 @@ const Detail = async ({ params }: { params: Promise<{ id: string }> }) => {
           {/* SOL TƏRƏF: Şəkil Bölməsi */}
           <div className="relative aspect-square rounded-[3rem] overflow-hidden bg-white dark:bg-zinc-900 border border-slate-100 dark:border-zinc-800 shadow-2xl shadow-slate-200/50 dark:shadow-none">
             <Image
-              src={cleanImageUrl(item.images[0])}
+              src={cleanImageUrl(item.images[0]) ?? "/placeholder.jpg"}
               alt={item.title}
               fill
               priority
