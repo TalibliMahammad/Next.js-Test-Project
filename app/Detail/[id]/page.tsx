@@ -9,6 +9,8 @@ import {
   RefreshCw,
 } from "lucide-react";
 
+import NotFound from "@/app/not-found";
+
 interface Product {
   id: number;
   title: string;
@@ -63,7 +65,9 @@ const Detail = async ({ params }: { params: Promise<{ id: string }> }) => {
   const { id } = await params;
   const item = await getProduct(id);
 
+  console.log(item);
   
+  if (!item.id) NotFound() 
   const cleanImageUrl = (url: string) => {
     if (url.startsWith("[")) {
       try {
@@ -95,7 +99,7 @@ const Detail = async ({ params }: { params: Promise<{ id: string }> }) => {
           {/* SOL TƏRƏF: Şəkil Bölməsi */}
           <div className="relative aspect-square rounded-[3rem] overflow-hidden bg-white dark:bg-zinc-900 border border-slate-100 dark:border-zinc-800 shadow-2xl shadow-slate-200/50 dark:shadow-none">
             <Image
-              src={cleanImageUrl(item.images[0]) ?? "/placeholder.jpg"}
+           src={cleanImageUrl(item.images?.[0]) || "/placeholder.jpg"}
               alt={item.title}
               fill
               priority

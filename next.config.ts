@@ -4,12 +4,14 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'i.imgur.com',
-        port: '',
-        pathname: '/**',
+        hostname: 'picsum.photos',
+      },
+      {
+        protocol: 'https',
+        hostname: '**', 
       },
     ],
   },
 };
 
-export default nextConfig;
+module.exports = nextConfig;
